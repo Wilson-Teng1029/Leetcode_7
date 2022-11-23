@@ -6,18 +6,14 @@ class Solution {
         char temp ;
         if ( ans >= 0 ) {
             str = Long.toString(ans);
-            for (int j = str.length()-1;j >= 0 ; j--) {
-                sans += str.charAt(j) ;
-            }
-            ans = Long.valueOf(sans); 
+            str = new StringBuilder(str).reverse().toString() ;
+            ans = Long.valueOf(str); 
         }
         else {
             ans *= -1  ;
             str = Long.toString(ans);
-            for (int j = str.length()-1;j >= 0 ; j--) {
-                sans += str.charAt(j) ;
-            }
-            ans = Long.valueOf(sans); 
+            str = new StringBuilder(str).reverse().toString() ;
+            ans = Long.valueOf(str); 
             ans *= -1 ;
         }
         if ( ans > 2147483647 || ans < -2147483648)return 0 ;
